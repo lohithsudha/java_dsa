@@ -26,4 +26,40 @@ class Solution {
         System.out.println(xx); // Output should be 4
     }
 }
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//second largest number in an array (gfg 1/1/2025)
+class Solution {
+    public int getSecondLargest(int[] arr) {
+        
+        int n=arr[0];
+        if(arr.length<=1){
+            return -1;
+        }
+        for (int i=0;i<arr.length;i++){
+           if(arr[i]>n){
+               n=arr[i];
+           }   
+       }
+       int m=arr[0];
+       for (int i = 0; i < arr.length; i++) {
+           if (arr[i] != n) {
+               m = arr[i]; 
+               break; }
+               }
+       
+       for (int j=0;j<arr.length;j++){
+        if(arr[j]>m && arr[j]<n){
+            m=arr[j];
+        }
+       }
+       return m;
+    
+    }
+    public static void main(String args[]){
+        int lohith[] = {1, 2, 3, 5}; 
+        Solution solution = new Solution(); 
+        int xx = solution.getSecondLargest(lohith);
+        System.out.println(xx);
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
