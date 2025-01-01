@@ -28,38 +28,29 @@ class Solution {
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //second largest number in an array (gfg 1/1/2025)
-class Solution {
-    public int getSecondLargest(int[] arr) {
-        
-        int n=arr[0];
-        if(arr.length<=1){
-            return -1;
-        }
+public class Main{
+    public static int second(){
+        int arr[]={10,10,10};
+        int n=Integer.MIN_VALUE;
         for (int i=0;i<arr.length;i++){
            if(arr[i]>n){
                n=arr[i];
            }   
        }
-       int m=arr[0];
-       for (int i = 0; i < arr.length; i++) {
-           if (arr[i] != n) {
-               m = arr[i]; 
-               break; }
-               }
-       
+       int m=Integer.MIN_VALUE;
        for (int j=0;j<arr.length;j++){
         if(arr[j]>m && arr[j]<n){
             m=arr[j];
         }
        }
-       return m;
+       return m == Integer.MIN_VALUE ? -1 : m;
     
+
     }
     public static void main(String args[]){
-        int lohith[] = {1, 2, 3, 5}; 
-        Solution solution = new Solution(); 
-        int xx = solution.getSecondLargest(lohith);
-        System.out.println(xx);
+        int a=second();
+        System.out.println(a);
+        
     }
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
