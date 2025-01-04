@@ -103,3 +103,51 @@ Output: 2
     }
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+125. Valid Palindrome
+Solved
+Easy
+
+A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
+Given a string s, return true if it is a palindrome, or false otherwisclass
+    Solution {
+    public boolean isPalindrome(String s) {
+        int start=0,end=s.length()-1;
+        
+        while(start<end){
+            char right =s.charAt(start);
+            char left =s.charAt(end);
+            if(!Character.isLetterOrDigit(right)){
+                 start++;
+            }
+            else if(!Character.isLetterOrDigit(left)){
+                end--;
+            }
+            else if(Character.toLowerCase(right)!=Character.toLowerCase(left)){
+                return false;
+            }
+            else{
+                end--;
+                start++;
+            }
+        }
+        return true;
+        
+    }
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+class Solution {
+    public int fib(int n) {
+        if (n == 0) return 0;
+        if (n == 1) return 1;
+        
+        int fibb[] = new int[n + 1];
+        fibb[0] = 0;
+        fibb[1] = 1;
+        for (int i = 2; i <= n; i++) {
+            fibb[i] = fibb[i - 1] + fibb[i - 2];
+        }
+        
+        return fibb[n];
+    }
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
