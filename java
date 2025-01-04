@@ -74,3 +74,32 @@ class Solution {
 }
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+(4/1/2025)-leetcode
+    Given an array nums of integers, return how many of them contain an even number of digits.
+Example 1:
+Input: nums = [12,345,2,6,7896]
+Output: 2
+    class Solution {
+    public int findNumbers(int[] nums) {
+        if(nums.length>=500 && nums.length<=1){
+            return -1;
+        }
+        int div,count,r=0;
+        for(int i=0;i<nums.length;i++){
+            div=nums[i];
+            if(nums[i]>=Math.pow(10,5) && nums[i]<=1){
+                return -1;
+            }
+            count=0;
+            while(div>0){
+                div=div/10;
+                count=count+1;
+            }
+            if(count%2==0){
+                r=r+1;
+            }
+        }
+        return r;
+    }
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
