@@ -182,8 +182,30 @@ class Solution {
         if (count > 1) { // More than 1 inversion => Not sorted and rotated
             return false;
         }
-    }
+    
 
     return true; // Valid sorted and rotated array
     }
 }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+283. Move Zeroes
+Solved
+Easy
+Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements
+    class Solution {
+    public void moveZeroes(int[] nums) {
+       if(nums.length==0){
+        return ;
+       }
+       int j=0;
+       for(int i=0;i<nums.length;i++){
+           if(nums[i]!=0){
+            nums[j++]=nums[i];
+           }
+       }
+       while(j<nums.length){
+        nums[j++]=0;
+       }
+    }
+}
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
