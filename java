@@ -209,3 +209,40 @@ Given an integer array nums, move all 0's to the end of it while maintaining the
     }
 }
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Union of 2 Sorted with Duplicates(geeks for geeks)
+    Given two sorted arrays a[] and b[], where each array may contain duplicate elements , the task is to return the elements in the union of the two arrays in sorted order.
+    class Solution {
+    // Function to return a list containing the union of the two arrays
+   
+    
+    public static ArrayList<Integer> findUnion(int a[], int b[]) {
+       
+       if(a.length>=b.length){
+           return comb(a,b);
+       }
+       else{
+           return comb(b,a);
+       }
+        
+       
+    }
+    public static ArrayList<Integer>  comb(int greater[],int lower[]){
+        HashSet<Integer> set=new HashSet<Integer>();
+       for (int i : lower) {
+            set.add(i);
+        }
+
+        // Add all elements from the "greater" array to the set
+        for (int i : greater) {
+            set.add(i);
+        }
+       ArrayList<Integer> result = new ArrayList<>(set);
+
+        // Sort the ArrayList
+        Collections.sort(result);
+
+        return result;
+    }
+    
+}
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
