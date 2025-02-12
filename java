@@ -366,3 +366,45 @@ You want to maximize your profit by choosing a single day to buy one stock and c
 }
 }
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+2149. Rearrange Array Elements by Sign
+Solved
+Medium
+You are given a 0-indexed integer array nums of even length consisting of an equal number of positive and negative integers.
+    class Solution {
+    public int[] rearrangeArray(int[] nums) {
+      
+       int[] positive=new int[nums.length/2];
+        int[] negative=new int[nums.length/2];
+       int j=0;
+           int k=0;
+       for(int i=0;i<nums.length;i++){
+           
+           if(nums[i]>0){
+               
+               positive[j]=nums[i];
+               j++;
+           }
+           else{
+               
+               negative[k]=nums[i];
+               k++;
+           }
+       }
+        int p=0;
+           int q=0;
+       for(int a=0;a<nums.length;a++){
+          
+          if(a%2==0 &&   p < positive.length){
+              nums[a]=positive[p];
+              p++;
+             
+          }
+          else if( q <negative.length){
+              nums[a]=negative[q];
+              q++;
+          }
+       }
+      return nums; 
+    }
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
