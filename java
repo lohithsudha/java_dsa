@@ -408,3 +408,50 @@ You are given a 0-indexed integer array nums of even length consisting of an equ
     }
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+4. Median of Two Sorted Arrays
+Solved
+Hard
+    Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+The overall run time complexity should be O(log (m+n)).
+    class Solution {
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int[] mergedArray = merge(nums1, nums2);
+        int n=mergedArray.length;
+       
+        
+         if (n % 2 == 1) {
+           
+            return mergedArray[n / 2];
+        } else {
+           
+            return (mergedArray[n / 2 - 1] + mergedArray[n / 2]) / 2.0;
+        }
+        
+    }
+    public static int[] merge(int[] arr1, int[] arr2) {
+        int[] result = new int[arr1.length + arr2.length]; 
+        int i = 0, j = 0, k = 0;
+
+        
+        while (i < arr1.length && j < arr2.length) {
+            if (arr1[i] < arr2[j]) {
+                result[k++] = arr1[i++];
+            } else {
+                result[k++] = arr2[j++];
+            }
+        }
+
+        
+        while (i < arr1.length) {
+            result[k++] = arr1[i++];
+        }
+
+      
+        while (j < arr2.length) {
+            result[k++] = arr2[j++];
+        }
+        
+        return result;
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
