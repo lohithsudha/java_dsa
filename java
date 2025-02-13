@@ -474,3 +474,18 @@ class Solution {
        return result;
     }
 }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+class Solution {
+    public int maxAdjacentDistance(int[] nums) {
+        if (nums == null || nums.length == 0) return 0; // Edge case: empty array
+        if (nums.length == 1) return 0; // Edge case: single element
+        
+        int max = 0;
+        for (int i = 0; i < nums.length; i++) {
+            int diff = Math.abs(nums[i] - nums[(i + 1) % nums.length]);
+            max = Math.max(max, diff);
+        }
+        return max;
+    }
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
