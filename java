@@ -455,3 +455,22 @@ The overall run time complexity should be O(log (m+n)).
     }
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Array Leaders
+Difficulty: EasyAccuracy: 29.94%Submissions: 819K+Points: 2Average Time: 15m
+You are given an array arr of positive integers. Your task is to find all the leaders in the array. An element is considered a leader if it is greater than or equal to all elements to its right. The rightmost element is always a leader
+class Solution {
+    static ArrayList<Integer> leaders(int arr[]) {
+    ArrayList<Integer> result=new ArrayList<Integer>();
+    int n=arr.length;
+    int max=arr[arr.length-1];
+    result.add(arr[n-1]);
+       for(int i=n-2;i>=0;i--){
+           if(arr[i]>=max){
+               result.add(arr[i]);
+               max=arr[i];
+           }
+       }
+      Collections.reverse(result);
+       return result;
+    }
+}
