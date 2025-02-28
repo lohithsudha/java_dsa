@@ -45,3 +45,22 @@ If there is no common prefix, return an empty string "".class Solution {
     }
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+796. Rotate String
+Solved
+Easy
+Given two strings s and goal, return true if and only if s can become goal after some number of shifts on s.
+class Solution {
+    public boolean rotateString(String s, String goal) {
+        // Edge case: If lengths don't match, return false immediately
+        if (s.length() != goal.length()) {
+            return false;
+        }
+
+        // The key observation: If `s` can rotate to become `goal`,
+        // then `goal` must be a substring of `s + s`
+        String doubled = s + s;
+
+        return doubled.contains(goal);
+    }
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
