@@ -64,3 +64,25 @@ class Solution {
     }
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+242. Valid Anagram
+Solved
+Easy
+Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+class Solution {
+    public boolean isAnagram(String s, String t) {
+          boolean result=false;  
+          if(s.length()!=t.length()){
+            result=false;
+          }
+          if(sortt(s).equals(sortt(t))){
+            result= true;
+          }
+          return result;
+          
+    }
+    private String sortt(String str){
+            char[] arr= str.toCharArray();
+            Arrays.sort(arr);
+            return new String(arr);
+          }
+}/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
