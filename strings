@@ -86,3 +86,25 @@ class Solution {
             return new String(arr);
           }
 }/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+1614. Maximum Nesting Depth of the Parentheses
+Solved
+Easy
+Given a valid parentheses string s, return the nesting depth of s. The nesting depth is the maximum number of nested parentheses
+class Solution {
+    public int maxDepth(String s) {
+        char[] a=s.toCharArray();
+        int count=0;
+        int max=0;
+        for(int i=0;i<s.length()-1;i++){
+            if(a[i]=='('){
+                count+=1;
+                max=(count>max)?count:max;
+            }
+            else if(a[i]==')'){
+                  count-=1;
+            }
+        }
+        return max;
+    }
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
